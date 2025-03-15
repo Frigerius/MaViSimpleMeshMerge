@@ -20,11 +20,11 @@ struct FMaViSimpleMeshMergeRequest
     TArray<TSoftObjectPtr<USkeletalMesh>> MeshesToMerge;
 
     friend uint32 GetTypeHash(const FMaViSimpleMeshMergeRequest& InObject);
-    bool operator==(const FMaViSimpleMeshMergeRequest& Other) const;
+    MAVISIMPLEMESHMERGE_API bool operator==(const FMaViSimpleMeshMergeRequest& Other) const;
 };
 
 USTRUCT(BlueprintType)
-struct MAVISIMPLEMESHMERGE_API FMaViSimpleMeshMergeRequestHandle
+struct FMaViSimpleMeshMergeRequestHandle
 {
     GENERATED_BODY()
     FMaViSimpleMeshMergeRequestHandle() = default;

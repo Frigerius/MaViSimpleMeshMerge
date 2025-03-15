@@ -35,7 +35,7 @@ public:
     UMaViSimpleMeshMergeWorldSubsystem();
     ~UMaViSimpleMeshMergeWorldSubsystem() override;
 
-    static UMaViSimpleMeshMergeWorldSubsystem& Get(const UObject* WorldContext);
+    MAVISIMPLEMESHMERGE_API static UMaViSimpleMeshMergeWorldSubsystem& Get(const UObject* WorldContext);
 
     void Deinitialize() override;
     void Tick(float DeltaTime) override;
@@ -44,8 +44,8 @@ public:
     bool IsTickableInEditor() const override { return true; }
     bool IsTickableWhenPaused() const override { return true; }
 
-    EYggMeshMergeRequestResult RequestMeshMerge(FMaViSimpleMeshMergeRequest&& Request, FMaViSimpleMergedMeshReadySignature&& Callback, FMaViSimpleMeshMergeRequestHandle& OutHandle);
-    static void AbortRequest(const FMaViSimpleMeshMergeRequestHandle& Handle);
+    MAVISIMPLEMESHMERGE_API EYggMeshMergeRequestResult RequestMeshMerge(FMaViSimpleMeshMergeRequest&& Request, FMaViSimpleMergedMeshReadySignature&& Callback, FMaViSimpleMeshMergeRequestHandle& OutHandle);
+    MAVISIMPLEMESHMERGE_API static void AbortRequest(const FMaViSimpleMeshMergeRequestHandle& Handle);
 
 protected:
     bool DoesSupportWorldType(const EWorldType::Type WorldType) const override;
